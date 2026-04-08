@@ -36,8 +36,7 @@ optional = true
 features = ["unprefixed_malloc_on_supported_platforms"]
 
 [dependencies.lz4-sys]
-git = "https://github.com/busyjay/lz4-rs.git"
-branch = "adjust-build"
+version = "1.11"
 
 [dependencies.snappy-sys]
 git = "https://github.com/busyjay/rust-snappy.git"
