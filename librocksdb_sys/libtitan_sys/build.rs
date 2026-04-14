@@ -45,6 +45,9 @@ fn main() {
             .define("WITH_ZSTD", "ON")
             .register_dep("SNAPPY")
             .define("WITH_SNAPPY", "ON");
+        // GCC 13+ false-positive -Warray-bounds on statistics_impl.h
+        // tickers array under -O2+. Demote to warning only.
+        cfg.cxxflag("-Wno-error=array-bounds");
     } else {
         cfg.cxxflag("/MP")
             .register_dep("LZ4")
